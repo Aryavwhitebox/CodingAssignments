@@ -1,0 +1,23 @@
+var areAlmostEqual = function(s1, s2) {
+   
+  
+  if (s1 === s2) {
+    return true; // the strings are already equal
+  }
+  
+  const diffIndices = [];
+  
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] !== s2[i]) {
+      diffIndices.push(i);
+      if (diffIndices.length > 2) {
+        return false; // more than two differences, can't be made equal
+      }
+    }
+  }
+  
+  return diffIndices.length === 2 && s1[diffIndices[0]] === s2[diffIndices[1]] && s1[diffIndices[1]] === s2[diffIndices[0]];
+}
+
+
+
